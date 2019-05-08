@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- <script src="trivia.js"></script> -->
+</head>
+<body>
+    <script>
+        // document.getElementById("demo").innerHTML = 5 + 6;
+        $(document).ready(function(data){
+            $('#you').click(function(){
+                $.get("https://opentdb.com/api.php?amount=10", displayName )
+                function displayName(data) {
+                    for( var i = 0; i < data.results.length; i++){
+                        var zz = data.results[i].question;
+                        var yy = data.results[i].correct_answer;
+                        // console.log( data.results[i].correct_answer)
+                        // console.log( data.results[i].question);
+                        $('#demo').append("<p>" + zz + "</p>")
+                        $('#under').append("<p>" + yy + "</p>")
+
+                    }
+                }
+
+            })
+                
+
+            // $('button').click(function(){
+            //     $('#demo').append("hi")
+            // })
+
+        })
+        
+    </script>
+
+    <div>
+        <h2>Question</h2> 
+
+        <button id="you" type="button">start</button>
+        <div id="demo"></div>
+
+
+
+        <h2>Answer</h2>
+    
+        <!-- <button type="but">answer</button> -->
+        <div id = "under"></div>
+
+
+        
+
+    </div>
+        
+
+    </div>
+    
+</body>
+</html>
